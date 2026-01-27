@@ -30,11 +30,10 @@ public class SalaryInfo {
             int rate = Integer.parseInt(parts[3]);
             salaryMap.put(name, salaryMap.getOrDefault(name, 0) + hours * rate);
         }
-        StringBuilder report = new StringBuilder("Report for period " + dateFrom + " _ " + dateTo + "\n");
+        StringBuilder report = new StringBuilder("Report for period " + dateFrom + " - " + dateTo + "\n");
         for (String name : names) {
-            report.append(name).append(" _ ").append(salaryMap.getOrDefault(name, 0)).append("\n");
+            report.append(name).append(" - ").append(salaryMap.getOrDefault(name, 0)).append("\n");
         }
-
         return report.toString().trim();
     }
 }

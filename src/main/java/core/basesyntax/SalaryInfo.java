@@ -34,6 +34,7 @@ public class SalaryInfo {
         for (String name : names) {
             report.append(name).append(" - ").append(salaryMap.getOrDefault(name, 0)).append("\n");
         }
+        
         return report.toString().trim();
     }
 }

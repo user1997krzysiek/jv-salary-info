@@ -29,12 +29,13 @@ public class SalaryInfo {
             int hours = Integer.parseInt(parts[2]);
             int rate = Integer.parseInt(parts[3]);
             salaryMap.put(name, salaryMap.getOrDefault(name, 0) + hours * rate);
-        }
-        StringBuilder report = new StringBuilder("Report for period " + dateFrom + " - " + dateTo + "\n");
-        for (String name : names) {
-            report.append(name).append(" - ").append(salaryMap.getOrDefault(name, 0)).append("\n");
-        }
-        
-        return report.toString().trim();
+            }
+
+            StringBuilder report = new StringBuilder("Report for period " + dateFrom + " - " + dateTo + System.lineSeparator());
+            for (String name : names) {
+                report.append(name).append(" - ").append(salaryMap.getOrDefault(name, 0)).append(System.lineSeparator());
+            }
+
+            return report.toString().trim();
     }
 }
